@@ -1,2 +1,2 @@
 # FlashFeed_Chatbot
-A real-time news summarization chatbot using API, integrating category-wise query classification and NLP-based extractive summarization for fast, structured headline insights.
+FlashFeed is an AI-powered news chatbot that fetches real-time headlines using the API and delivers quick, readable summaries. It includes a keyword-based category detector, a Flask backend, and a simple chat-style frontend for instant, clean news responses.
