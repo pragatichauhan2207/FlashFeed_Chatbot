@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FlashFeed Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="chat-container">
+    <header class="chat-header">
+        <div class="chat-header-title">FlashFeed </div>
+        <div class="chat-header-subtitle">Ask for any category – sports, business, tech, films, health, and more.</div>
+        <div class="chat-header-actions">
+            <button id="tipsToggleButton" class="tips-toggle-button">Tips</button>
+            <div class="chat-language-toggle">
+                <label for="languageSelect">Language:</label>
+                <select id="languageSelect">
+                    <option value="en" selected>English</option>
+                    <option value="hi">हिंदी</option>
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <div class="chat-categories">
+        <button class="category-chip" data-query="top news in India">Top</button>
+        <button class="category-chip" data-query="latest sports news in India">Sports</button>
+        <button class="category-chip" data-query="latest business news in India">Business</button>
+        <button class="category-chip" data-query="latest technology news in India">Technology</button>
+        <button class="category-chip" data-query="latest entertainment and movies news in India">Entertainment</button>
+        <button class="category-chip" data-query="latest health news in India">Health</button>
+        <button class="category-chip" data-query="latest education and exam news in India">Education</button>
+    </div>
+
+    <main class="chat-main">
+        <section class="chat-box" id="chatBox">
+            <div class="message-row bot-message">
+                <div class="message-avatar bot">AI</div>
+                <div class="message-bubble">
+                    Welcome to FlashFeed. Ask me for the latest headlines – for example:
+                    <br><br>
+                    <span class="example">"Give me the latest technology news"</span><br>
+                    <span class="example">"What's new in cricket today?"</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="chat-input-bar">
+        <div class="chat-input">
+            <input
+                type="text"
+                id="userInput"
+                placeholder="Type your question and press Enter…"
+                autocomplete="off"
+            />
+            <button onclick="sendMessage()">
+                <span class="icon">➤</span>
+                Send
+            </button>
+        </div>
+    </div>
+
+    <div class="chat-global-button-bar">
+        <button id="globalNewsButton" class="global-cta-button">
+            Discover today’s top news across all categories
+        </button>
+    </div>
+
+    <!-- Tips overlay (hidden by default) -->
+    <div id="tipsOverlay" class="tips-overlay">
+        <div class="tips-panel">
+            <div class="tips-panel-header">
+                <h3>Tips</h3>
+                <button id="tipsCloseButton" class="tips-close-button">✕</button>
+            </div>
+            <div class="tips-panel-body">
+                <p>Try queries like:</p>
+                <ul>
+                    <li>"Top business headlines"</li>
+                    <li>"Health news in India"</li>
+                    <li>"Education updates"</li>
+                </ul>
+                <p>You'll get a block-wise list of articles with clickable links.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Summary overlay (hidden by default, opens on right side) -->
+    <div id="summaryOverlay" class="summary-overlay">
+        <div class="summary-panel">
+            <div class="summary-panel-header">
+                <h3>Article Summary</h3>
+                <div class="summary-header-actions">
+                    <div class="summary-language-toggle">
+                        <label for="summaryLanguageSelect">Language:</label>
+                        <select id="summaryLanguageSelect">
+                            <option value="en" selected>English</option>
+                            <option value="hi">हिंदी</option>
+                        </select>
+                    </div>
+                    <button id="summaryCloseButton" class="summary-close-button">✕</button>
+                </div>
+            </div>
+            <div class="summary-panel-body">
+                <h4 id="summaryTitle" class="summary-title"></h4>
+                <p id="summaryContent" class="summary-content"></p>
+                <a id="summaryLink" href="#" target="_blank" rel="noopener noreferrer" class="summary-link">Read full article →</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
