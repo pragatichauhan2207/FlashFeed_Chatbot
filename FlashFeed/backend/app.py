@@ -14,7 +14,7 @@ except ImportError:
 app = Flask(__name__)
 CORS(app)  # allows frontend to talk to backend
 
-# 🔑 Replace with your NewsData.io API key
+
 NEWS_API_KEY = "pub_9a19043a64b345f7b01c608da01217cf"
 
 # Category keywords mapping
