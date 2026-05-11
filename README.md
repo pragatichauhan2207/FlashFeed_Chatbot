@@ -19,7 +19,6 @@ FlashFeed/
 ```
 
 ---
-
 ## 🚀 Getting Started
 
 ### 1. Backend Setup (Python Flask)
@@ -38,7 +37,8 @@ Server starts at: `http://127.0.0.1:5000`
 
 Open `html-version/index.html` directly in your browser.
 
-> ⚠️ Make sure the Flask server is running before opening the frontend.
+> ⚠️ Make sure the Flask server is running before opening the frontend.  
+> ✅ No npm or build step needed — React loads automatically via CDN.
 
 ---
 
@@ -72,6 +72,7 @@ NEWS_API_KEY = "your_api_key_here"
 | GET    | `/health`    | Server health check                |
 
 ### `/chat` Request Body
+
 ```json
 {
   "query": "latest cricket news",
@@ -80,6 +81,7 @@ NEWS_API_KEY = "your_api_key_here"
 ```
 
 ### `/summarize` Request Body
+
 ```json
 {
   "title": "Article title",
@@ -100,22 +102,22 @@ NEWS_API_KEY = "your_api_key_here"
 - `deep-translator` *(optional)* – Hindi translation
 
 ### Frontend
-- Vanilla HTML, CSS, React.js
+- React.js 18 (via CDN, no install needed)
+- Babel Standalone (JSX transpilation in browser)
 - Google Fonts: Syne + DM Sans
 
 ---
 
 ## 🐛 Troubleshooting
 
-| Problem | Solution |
-|---|---|
-| "Unable to fetch news" error | Ensure `python app.py` is running |
-| No articles returned | Check your NewsData.io API key |
-| Hindi translation not working | Run `pip install deep-translator` |
-| CORS error in browser | Flask-CORS is included; restart the server |
+| Problem                        | Solution                                      |
+|--------------------------------|-----------------------------------------------|
+| "Unable to fetch news" error   | Ensure `python app.py` is running             |
+| No articles returned           | Check your NewsData.io API key                |
+| Hindi translation not working  | Run `pip install deep-translator`             |
+| CORS error in browser          | Flask-CORS is included; restart the server    |
+| Page blank / React not loading | Check internet connection (CDN required)      |
 
 ---
-
-## 📄 License
 
 MIT — free to use and modify.
