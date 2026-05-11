@@ -1,140 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>FlashFeed – AI News Chatbot</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FlashFeed – AI News Chatbot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-<div class="app-shell">
-
-    <!-- Sidebar -->
-    <aside class="sidebar">
-        <div class="sidebar-brand">
-            <span class="brand-icon">⚡</span>
-            <span class="brand-name">FlashFeed</span>
-        </div>
-
-        <nav class="sidebar-nav">
-            <p class="nav-label">Categories</p>
-            <button class="nav-chip active" data-query="top news in India">
-                <span class="chip-icon">🔥</span> Top Headlines
-            </button>
-            <button class="nav-chip" data-query="latest sports news in India">
-                <span class="chip-icon">🏏</span> Sports
-            </button>
-            <button class="nav-chip" data-query="latest business news in India">
-                <span class="chip-icon">📈</span> Business
-            </button>
-            <button class="nav-chip" data-query="latest technology news in India">
-                <span class="chip-icon">💻</span> Technology
-            </button>
-            <button class="nav-chip" data-query="latest entertainment and movies news in India">
-                <span class="chip-icon">🎬</span> Entertainment
-            </button>
-            <button class="nav-chip" data-query="latest health news in India">
-                <span class="chip-icon">🏥</span> Health
-            </button>
-            <button class="nav-chip" data-query="latest science news in India">
-                <span class="chip-icon">🔬</span> Science
-            </button>
-            <button class="nav-chip" data-query="latest education and exam news in India">
-                <span class="chip-icon">📚</span> Education
-            </button>
-        </nav>
-
-        <div class="sidebar-footer">
-            <div class="lang-toggle">
-                <span class="lang-label">Language</span>
-                <div class="lang-buttons">
-                    <button class="lang-btn active" data-lang="en">EN</button>
-                    <button class="lang-btn" data-lang="hi">हि</button>
-                </div>
-            </div>
-        </div>
-    </aside>
-
-    <!-- Main chat area -->
-    <div class="main-area">
-
-        <!-- Mobile header -->
-        <header class="mobile-header">
-            <button class="menu-btn" id="menuBtn">☰</button>
-            <span class="brand-name">⚡ FlashFeed</span>
-            <div class="mobile-lang">
-                <button class="lang-btn active" data-lang="en" data-mobile="true">EN</button>
-                <button class="lang-btn" data-lang="hi" data-mobile="true">हि</button>
-            </div>
-        </header>
-
-        <!-- Chat messages -->
-        <section class="chat-box" id="chatBox">
-            <div class="welcome-card">
-                <div class="welcome-icon">⚡</div>
-                <h2 class="welcome-title">Welcome to FlashFeed</h2>
-                <p class="welcome-sub">Your AI-powered news assistant. Ask me anything!</p>
-                <div class="quick-chips">
-                    <button class="quick-chip" data-query="What's happening in cricket today?">🏏 Cricket today</button>
-                    <button class="quick-chip" data-query="Latest tech news in India">💻 Tech news</button>
-                    <button class="quick-chip" data-query="Business headlines today">📈 Markets</button>
-                    <button class="quick-chip" data-query="Bollywood entertainment news">🎬 Bollywood</button>
-                </div>
-            </div>
-        </section>
-
-        <!-- Input bar -->
-        <div class="input-bar">
-            <div class="input-wrap">
-                <input
-                    type="text"
-                    id="userInput"
-                    placeholder="Ask about any news topic…"
-                    autocomplete="off"
-                />
-                <button class="send-btn" id="sendBtn" onclick="sendMessage()">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                        <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
-            </div>
-            <p class="input-hint">Press <kbd>Enter</kbd> to send</p>
-        </div>
-    </div>
-
-</div>
-
-<!-- Summary drawer -->
-<div class="summary-overlay" id="summaryOverlay">
-    <div class="summary-drawer">
-        <div class="drawer-header">
-            <h3>Article Summary</h3>
-            <div class="drawer-actions">
-                <div class="lang-buttons small">
-                    <button class="lang-btn active" id="summaryLangEn">EN</button>
-                    <button class="lang-btn" id="summaryLangHi">हि</button>
-                </div>
-                <button class="close-btn" id="summaryClose">✕</button>
-            </div>
-        </div>
-        <div class="drawer-body">
-            <h4 id="summaryTitle" class="drawer-title"></h4>
-            <div id="summaryContent" class="drawer-content"></div>
-            <a id="summaryLink" href="#" target="_blank" rel="noopener noreferrer" class="read-more-btn">
-                Read full article →
-            </a>
-        </div>
-    </div>
-</div>
-
-<!-- Mobile sidebar overlay -->
-<div class="sidebar-overlay" id="sidebarOverlay"></div>
-
-<script src="script.js"></script>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel" src="app.jsx"></script>
 </body>
 </html>
