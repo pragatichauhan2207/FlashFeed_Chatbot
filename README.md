@@ -1,10 +1,10 @@
-# FlashFeed – AI News Chatbot
+# ⚡ FlashFeed – AI News Chatbot
 
 A conversational news chatbot powered by **Python Flask** (backend) + **HTML/CSS/JS** (frontend) that fetches live Indian news via the [NewsData.io](https://newsdata.io) API. Supports English & Hindi, article summaries, and category filtering.
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 FlashFeed/
@@ -14,13 +14,13 @@ FlashFeed/
 ├── html-version/
 │   ├── index.html          # Main UI
 │   ├── style.css           # Styling (dark theme)
-│   └── script.js           # Frontend logic
+│   └── app.jsx          # Frontend logic
 └── README.md
 ```
 
 ---
 
-##  Getting Started
+## 🚀 Getting Started
 
 ### 1. Backend Setup (Python Flask)
 
@@ -38,11 +38,11 @@ Server starts at: `http://127.0.0.1:5000`
 
 Open `html-version/index.html` directly in your browser.
 
->  Make sure the Flask server is running before opening the frontend.
+> ⚠️ Make sure the Flask server is running before opening the frontend.
 
 ---
 
-##  API Key Setup
+## 🔑 API Key Setup
 
 Get a free API key from [newsdata.io](https://newsdata.io) and replace the key in `backend/app.py`:
 
@@ -52,18 +52,18 @@ NEWS_API_KEY = "your_api_key_here"
 
 ---
 
-##  Features
+## ✨ Features
 
--  **Live News** – Fetches real-time Indian news from NewsData.io
--  **Category Detection** – Automatically detects sports, tech, business, entertainment, health, science, education, politics
--  **Hindi Support** – Switch between English and Hindi (requires `deep-translator`)
--  **Article Summary** – Slide-in summary drawer with key bullet points
--  **Responsive Design** – Works on mobile and desktop
--  **Keyboard Shortcut** – Press `Enter` to send messages
+- 🔥 **Live News** – Fetches real-time Indian news from NewsData.io
+- 🗂️ **Category Detection** – Automatically detects sports, tech, business, entertainment, health, science, education, politics
+- 🌐 **Hindi Support** – Switch between English and Hindi (requires `deep-translator`)
+- 📋 **Article Summary** – Slide-in summary drawer with key bullet points
+- 📱 **Responsive Design** – Works on mobile and desktop
+- ⌨️ **Keyboard Shortcut** – Press `Enter` to send messages
 
 ---
 
-##  API Endpoints
+## 🛠️ API Endpoints
 
 | Method | Endpoint     | Description                        |
 |--------|--------------|------------------------------------|
@@ -91,7 +91,7 @@ NEWS_API_KEY = "your_api_key_here"
 
 ---
 
-## Dependencies
+## 📦 Dependencies
 
 ### Python
 - `flask` – Web framework
@@ -100,12 +100,12 @@ NEWS_API_KEY = "your_api_key_here"
 - `deep-translator` *(optional)* – Hindi translation
 
 ### Frontend
-- Vanilla HTML, CSS, JavaScript (no frameworks needed)
+- Vanilla HTML, CSS, React.js
 - Google Fonts: Syne + DM Sans
 
 ---
 
-## Troubleshooting
+## 🐛 Troubleshooting
 
 | Problem | Solution |
 |---|---|
@@ -115,3 +115,7 @@ NEWS_API_KEY = "your_api_key_here"
 | CORS error in browser | Flask-CORS is included; restart the server |
 
 ---
+
+## 📄 License
+
+MIT — free to use and modify.
